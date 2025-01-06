@@ -73,8 +73,13 @@ Sets the task duration, state and action dimensions, camera settings, and ROS to
 
 ## Data Processing Configuration
 
-Manages data processing paths, markers, robot position, and initial joint states.
-
+Manages data processing paths, markers, robot position, and initial joint states. 
+We have already performed coordinate transformation in the code. The corresponding relationship diagram of coordinate transformation is shown below:
+<p align="center">
+  <img src="path_to_image1.jpg" width="400" />
+  <img src="path_to_image1.jpg" width="400" />
+</p>
+The following configuration is based on the coordinate system conversion shown in the figure.
 ```json
 "data_process_config": {
     "marker_id_0":0,
@@ -123,19 +128,19 @@ Manages data processing paths, markers, robot position, and initial joint states
 
 ### Position & Orientation
 
-- **base_position**: Initial Tool Center Point position.
-- **base_orientation**: Initial Tool Center Point orientation.
-- **offset**: Positional offsets of the RealSense T265 relative to the Tool Center Point.
+- **base_position**: Initial Tool Center Point position of Robot arm (there is Xarm6).
+- **base_orientation**: Initial Tool Center Point orientation of Robot arm (there is Xarm6).
+- **offset**: Positional offsets of the RealSense T265 relative to the Tool Center Point on Handheld Device.
 
 ### Distance Parameters
 
 - **marker_max / marker_min** (`float`): Marker detection distance range.
-- **gripper_max / gripper_min** (`float`): Gripper open/close range.
+- **gripper_max / gripper_min** (`float`): Gripper open/close range (Refers to the value transmitted in the gripper control command).
 - **flange_to_tcp** (`float`): Distance from flange to Tool Center Point.
 
 ### Initial Joint Positions
 
-- **start_qpos** (`array`): Initial positions for each joint.
+- **start_qpos** (`array`): Initial positions for each joint of Robot arm (there is Xarm6).
 
 ---
 
