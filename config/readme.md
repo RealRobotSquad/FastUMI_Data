@@ -75,6 +75,8 @@ Sets the task duration, state and action dimensions, camera settings, and ROS to
 
 Manages data processing paths, markers, robot position, and initial joint states. 
 We have already performed coordinate transformation in the code. The corresponding relationship diagram of coordinate transformation is shown below:
+
+
 <figure align="center">
   <img src="../docs/2.png" width="400" />
   <figcaption>Coordinate system of T265 in rviz</figcaption>
@@ -84,6 +86,8 @@ We have already performed coordinate transformation in the code. The correspondi
   <figcaption>Coordinate system of Xarm6</figcaption>
 </figure>
 The following configuration is based on the coordinate system conversion shown in the figure.
+
+
 ```json
 "data_process_config": {
     "marker_id_0":0,
