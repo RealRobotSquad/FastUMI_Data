@@ -79,12 +79,15 @@ We have already performed coordinate transformation in the code. The correspondi
 
 <figure align="center">
   <img src="../docs/2.png" width="400" />
+  <img src="../docs/3.jpg" width="400" />
   <figcaption>Coordinate system of T265 in rviz</figcaption>
 </figure>
 <figure align="center">
   <img src="../docs/1.png" width="400" />
   <figcaption>Coordinate system of Xarm6</figcaption>
 </figure>
+
+
 The following configuration is based on the coordinate system conversion shown in the figure.
 
 
