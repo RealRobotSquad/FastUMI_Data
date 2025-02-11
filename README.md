@@ -63,6 +63,8 @@ Collecting real-world manipulation trajectory data involving robotic arms is ess
 
 ## 1. 🏠 Environment and GoPro Setup
 
+We recommend using Ubuntu 20.04, kernel 5.15.0-131-generic, ROS noetic, Librealsense v2.53.1 (as T265 is not supported in later versions), and realsense2_camera v2.3.2.
+
 To set up the environment, follow these steps:
 
 ### 1.1 🚀 ROS Installation  
