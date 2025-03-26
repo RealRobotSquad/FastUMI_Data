@@ -84,18 +84,18 @@ Create a Virtual Environment and Install Dependencies
 ### 1.3 🛒 Install the necessary ROS packages
 
     sudo apt install python3-catkin-tools python3-rospkg python3-rosdep python3-rosinstall-generator
-    sudo apt install ros-<ros-distro>-geometry-msgs ros-<ros-distro>-sensor-msgs ros-<ros-distro>-nav-msgs
-    sudo apt install ros-<ros-distro>-cv-bridge
-    sudo apt install ros-<ros-distro>-usb-cam
+    sudo apt install ros-noetic-geometry-msgs ros-noetic-sensor-msgs ros-noetic-nav-msgs
+    sudo apt install ros-noetic-cv-bridge
+    sudo apt install ros-noetic-usb-cam
 
-Replace `<ros-distro>` with your ROS distribution, e.g., `noetic`.
+<!-- Replace `noetic` with your ROS distribution, e.g., `noetic`. -->
 
 ### 1.4 📺 Intel RealSense Dependencies
 If your system is missing RealSense dependencies, follow these steps:
 - Clone and install the [Intel RealSense library](https://github.com/IntelRealSense/librealsense).
 - Alternatively, use the following commands to install the necessary libraries:
   ```
-  sudo apt install ros-<ros-distro>-realsense2-camera
+  sudo apt install ros-noetic-realsense2-camera
   sudo apt-key adv --keyserver keys.gnupg.net --recv-key 04A3CF2E
   sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo $(lsb_release -cs) main"
   sudo apt update
