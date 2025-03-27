@@ -96,9 +96,12 @@ If your system is missing RealSense dependencies, follow these steps:
 - Alternatively, use the following commands to install the necessary libraries:
   ```
   sudo apt install ros-noetic-realsense2-camera
-  sudo apt-key adv --keyserver keys.gnupg.net --recv-key 04A3CF2E
-  sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo $(lsb_release -cs) main"
-  sudo apt update
+  sudo apt-get install apt-transport-https
+  sudo mkdir -p /etc/apt/keyrings
+  curl -sSf https://librealsense.intel.com/Debian/librealsense.pgp | sudo tee /etc/apt/keyrings/librealsense.pgp > /dev/null
+  echo "deb [signed-by=/etc/apt/keyrings/librealsense.pgp] https://librealsense.intel.com/Debian/apt-repo `lsb_release -cs` main" | \
+  sudo tee /etc/apt/sources.list.d/librealsense.list
+  sudo apt-get update
   sudo apt install librealsense2-dkms librealsense2-utils librealsense2-dev librealsense2-dbg
   ```
 
