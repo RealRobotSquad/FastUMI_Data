@@ -71,9 +71,9 @@ def get_gripper_width(img_list):
     for i in range(img_list.shape[0]):
         gray = cv2.cvtColor(img_list[i, :, :, :], cv2.COLOR_BGR2GRAY)
         corners, ids, _ = cv2.aruco.detectMarkers(gray, aruco_dict, parameters=parameters)
-
+        current_frame += 1
         if ids is not None:
-            current_frame += 1
+            
             marker_centers = []
             for idx, marker_id in enumerate(ids.flatten()):
                 if marker_id in [config["marker_id_0"], config["marker_id_1"]]:
