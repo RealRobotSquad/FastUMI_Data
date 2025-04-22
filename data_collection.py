@@ -10,6 +10,7 @@ import numpy as np
 import pyrealsense2 as rs
 import apriltag
 import rospy
+
 from geometry_msgs.msg import PoseStamped
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
@@ -142,6 +143,7 @@ def write_video():
 
         sleep(0.001)  # Small sleep to avoid CPU overload
 
+
 # Thread for writing trajectory data to CSV
 def write_trajectory():
     counter = 0
@@ -228,8 +230,7 @@ if __name__ == "__main__":
                     }
                     for cam_name in cfg['camera_names']:
                         data_dict[f'/observations/images/{cam_name}'] = []
-
-                    # Process video frames
+                    timestamp_file.close()
                     timestamps = pd.read_csv(TIMESTAMP_PATH_TEMP)
                     downsampled_timestamps = timestamps.iloc[::3].reset_index(drop=True)
                     cap = cv2.VideoCapture(VIDEO_PATH_TEMP.replace("_n", f"_{episode}"))
